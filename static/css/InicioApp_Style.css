@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+html{
+    font-size: 62.5%;
+    font-family: 'Poppins', sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ************************************************ */
+/* ****************  UTILIDADES ******************* */
+/* ************************************************ */
+
+.container{
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+/* ******************************************** */
+/* ****************  HEADER ******************* */
+/* ******************************************** */
+
+.container-hero{
+    background-color: #ebad51;
+}
+
+.hero{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+.customer-support{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.customer-support i{
+    font-size: 3.0rem;
+}
+
+.content-customer-support{
+    display: flex;
+    flex-direction: column;
+}
+
+.conmtainer-logo{
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+}
+
+.conmtainer-logo i{
+    font-size: 3rem;
+}
+
+.conmtainer-logo h1 a{
+    text-decoration: none;
+    color: black;
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+}
+
+.conmtainer-user{
+    display: flex;
+    gap: 1rem;
+    cursor: pointer;
+}
+
+.conmtainer-user .fa-user{
+    font-size: 3rem;
+    color: #000000;
+    padding-right: 2.5rem;
+    border-right: 1px solid #000000;
+}
+
+.container-user .fa-basket-shopping{
+    font-size: 3rem;
+    color: rgb(255, 255, 255);
+    padding-left: 1rem;
+}
+
+.content-shopping-cart{
+    display:flex;
+    flex-direction: column;
+}
+
+
+/* ********************************** */
+/* *********** BANNER *************** */
+/* ********************************** */
+
+.banner{
+    background-image: url(/static/img/PictureLogin.jpeg);
+    height: 60rem;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.content-banner{
+    max-width: rem;
+    margin: 0 auto;
+    padding: 20rem ;
+    
+}
+
+.content-banner p{
+
+    text-shadow: 0px 0 rgba(124, 85, 11, 0.705), 1px 0 rgb(211, 32, 32);    
+    color: rgb(241, 159, 77);
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.content-banner h2{
+    color: white;
+    font-size: 4rem;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+
+.wrapper{
+    margin:150px auto;
+    width: 70%;
+
+}
+
+.text-box{
+    color:black;
+}
+
+.text-box h2{
+    font-size: 40px;
+}
+
+.text-box p{
+    font-size:16px
+}
+
+.slider-frame{
+    width: 320px;
+    height: 320px;
+    margin: 50px auto 0;
+    overflow: hidden;
+    border: 6px solid #eca451;
+    border-radius: 10px;
+    margin-right: 15px ;
+}
+
+.slider-frame ul{
+    display: flex;
+    padding: 0;
+    animation: cambio 20s infinite alternate linear;
+    width: 400%;
+}
+
+.slider-frame li{
+    list-style: none;
+    width: 100%;
+}
+
+.slider-frame img{
+    width: 100%;
+}
+
+@keyframes cambio {
+    0% { margin-left: 0%; }
+    20% { margin-left: 0%; }
+    25% { margin-left: -100%; }
+    45% { margin-left: -100%; }
+    50% { margin-left: -200%; }
+    70% { margin-left: -200%; }
+    75% { margin-left: -300%; }
+    100% { margin-left: -300%; }
+}
+
+sub {
+    color: white;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Sombra de texto para mejor legibilidad */
+    font-size: 15px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para mejorar legibilidad */
+}
+
+body{
+    background-color: #f3e8d7;
+}
+

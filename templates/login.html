@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Login_Style.css') }}">
+
+</head>
+<body>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <ul>
+          {% for category, message in messages %}
+            <li class="{{ category }}">{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+
+    <form action="/login" method="post">
+        <h2> Iniciar Sesion </h2> <p1 style="position: absolute; top: 60px; right: 140px;">Hello</p1>
+        <p2 style="position: absolute; top: 150px; right: 60px;">¡Si aún no tienes tu cuenta, compra ahora mismo y aprovecha al máximo todos nuestros beneficios! Simplifica tu gestión de inventario, potencia tus ventas y fortalece tus relaciones con los clientes. ¡No esperes más para llevar tu ferretería al siguiente nivel!</p2>
+
+      
+        <div class="input-container">
+          <i class="fas fa-envelope"></i>
+          <input type="email" id="email" name="email" placeholder="Correo" required><br><br>
+        </div>
+
+        <div class="input-container">
+          <i class="fas fa-lock"></i>
+          <input type="password" id="password" name="password" placeholder="Contraseña" required><br><br>
+        </div>
+        
+        <div class="Iniciar">
+            <input type="submit" class="btn-1" value="                    Iniciar                    ">
+        </div>
+    </form>
+</body>
+</html>

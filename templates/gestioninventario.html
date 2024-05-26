@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventario</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/GestiónInventario_style.css') }}">
+    <style>
+        body {
+            display: flex;
+        }
+
+        .menu_secundario {
+            flex: 0 0 200px; /* Ancho fijo de 200px */
+            background-color: lightgray; /* Color de fondo para la columna del menú */
+            padding: 10px;
+        }
+
+        .container {
+            flex: 1; /* La tabla ocupa todo el espacio restante */
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu_secundario">
+        <div class="secciones">
+            <div class="articulos" >
+                <a href="InicioApp.html">Inicio</a>
+                <a href="GestiónInventario.html">Gestión de Inventario</a>
+                <a href="Gestión de Clientes.html">Gestión de Clientes</a>
+                <a href="Registro De Ventas.html">Registro de Ventas</a>
+                <a href="Lista de Inventario.html">Lista de Inventario</a>
+                <a href="Informes y Análisis.html">Informes y Análisis</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h3>Hola, {{ user_name }}</h3>
+        <h2>Inventario</h2>
+        <table id="inventoryTable">
+            <thead>
+                <tr>
+                    <th>ID_Producto</th>
+                    <th>Nombre del producto</th>
+                    <th>Precio</th>
+                    <th>Stock</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="number" value="1"></td>
+                    <td><input type="text" value="Producto 1"></td>
+                    <td><input type="number" value="10.00"></td>
+                    <td><input type="number" value="50"></td>
+                    <td><button onclick="removeRow(this)">Eliminar</button></td>
+                </tr>
+                <tr>
+                    <td><input type="number" value="2"></td>
+                    <td><input type="text" value="Producto 2"></td>
+                    <td><input type="number" value="20.00"></td>
+                    <td><input type="number" value="30"></td>
+                    <td><button onclick="removeRow(this)">Eliminar</button></td>
+                </tr>
+                <tr>
+                    <td><input type="number" value="3"></td>
+                    <td><input type="text" value="Producto 3"></td>
+                    <td><input type="number" value="15.00"></td>
+                    <td><input type="number" value="20"></td>
+                    <td><button onclick="removeRow(this)">Eliminar</button></td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <form action="{{ url_for('logout') }}" method="post">
+        <button type="submit">Cerrar Sesión</button>
+    </form>
+    </div>
+
+    <script>
+        function addRow() {
+            var table = document.getElementById("inventoryTable").getElementsByTagName('tbody')[0];
+            var newRow = table.insertRow();
+            newRow.innerHTML = `<td><input type="number" value=""></td>
+                                <td><input type="text" value="New Product"></td>
+                                <td><input type="number" value="0"></td>
+                                <td><input type="number" value="0"></td>
+                                <td><button onclick="removeRow(this)">Eliminar</button></td>`;
+        }
+
+        function removeRow(button) {
+            var row = button.parentNode.parentNode;
+            row.parentNode.removeChild(row);
+        }
+    </script>
+</body>
+</html>
